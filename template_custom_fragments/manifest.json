@@ -1,0 +1,31 @@
+{
+    "name": "Custom Fragment Example",
+    "uuid": "c49a8a17-5cdf-4563-b554-54561f5ef6e3",
+    "version": "1.0",
+    "description": "A sample app showing how to add a custom html fragment to various locations in QRadar",
+    "copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
+    "fragments": [
+        {
+            "app_name": "QRadar",
+            "page_id": "Dashboard",
+            "rest_endpoint": "/dashboard"
+        },
+        {
+            "app_name": "SEM",
+            "location": "header",
+            "page_id": "MyOffenseList",
+            "rest_endpoint": "/offensemylistheader"
+        },
+        {
+            "app_name": "SEM",
+            "location": "footer",
+            "page_id": "MyOffenseList",
+            "rest_endpoint": "/offensemylistfooter"
+        },
+        {
+            "app_name": "QRadar",
+            "page_id": "allTabs",
+            "rest_endpoint": "/adminall"
+        }
+    ]
+}

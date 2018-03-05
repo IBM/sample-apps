@@ -1,0 +1,17 @@
+{
+	"name":"Config Page Sample",
+	"description":"Application to display a config page with image",
+	"version":"1.0",
+	"uuid":"30116e8a-8515-419b-94c3-12a052751bf3",
+	"copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
+
+	"configuration_pages": [
+		{
+			"text":"configpage_1",
+			"description":"configpage_1",
+			"icon":"static/images/extensions_manager.png",
+			"url":"admin_screen",
+			"required_capabilities":["ADMIN"]
+		}
+	]
+}

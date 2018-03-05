@@ -1,0 +1,48 @@
+{
+  "name": "Offense Toolbar Button Sample",
+  "description": "An example of how to add a custom button into the offenses toolbar",
+  "version": "1.0",
+  "copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
+  "uuid": "4a5d50cc-b9f1-4526-b356-5cb2d60e9467",
+  "rest_methods": [
+    {
+      "name": "offenseListFunction",
+      "url": "/offenseListFunction",
+      "method": "GET",
+      "argument_names": [
+        "context"
+      ]
+    }
+  ],
+  "gui_actions": [
+    {
+      "description": "My custom button!",
+      "text": "Custom Offense List Button",
+      "javascript": "my_offense_toolbar_button_action(result)",
+      "rest_method": "offenseListFunction",
+      "groups": [
+        "OffenseListToolbar"
+      ],
+      "id": "OffenseListToolbarButton",
+      "icon": "static/images/bookmarks_small.png"
+    }
+  ],
+  "page_scripts": [
+    {
+      "app_name": "SEM",
+      "page_id": "OffenseList",
+      "scripts": [
+        "static/js/custom_script.js",
+        "static/qjslib/qappfw.js"
+      ]
+    },
+    {
+      "page_id": "MyOffenseList",
+      "app_name": "SEM",
+      "scripts": [
+        "static/js/custom_script.js",
+        "static/qjslib/qappfw.js"
+      ]
+    }
+  ]
+}

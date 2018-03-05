@@ -1,0 +1,21 @@
+{
+	"name":"Metadata Provider Example",
+	"description":"Example application showing how to use the metadata provider functionality.",
+	"version":"1.0",
+	"uuid":"b5910e87-936e-4a5b-9f47-04f868771e46",
+	"copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
+	"rest_methods": [
+        {
+             "name":"getIPMetadata",
+             "url":"/ip_metadata_provider",
+             "method":"GET",
+             "argument_names":["context"]
+        }
+    ],
+	"metadata_providers" : [
+		{
+            "rest_method":"getIPMetadata",
+            "metadata_type":"ip"
+        }
+	]
+}

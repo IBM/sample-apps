@@ -1,0 +1,19 @@
+{
+
+    "name": "Store App",
+    "description": "A sample app using a custom tab with an input form to save data to local database",
+    "version": "1.0",
+    "uuid":"39d9fc7d-00a4-4434-bc89-3b0146912cd6",
+    "copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
+
+    "areas": [
+        {
+            "description": "A new tab to load an input form to save data",
+            "id": "StoreApp",
+            "required_capabilities":["ADMIN"],
+            "text": "StoreApp",
+            "url": "index"
+
+        }
+    ]
+}

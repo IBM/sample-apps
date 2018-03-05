@@ -1,0 +1,26 @@
+{
+    "name":"Dashboard Item Example",
+    "description":"A sample app showing how to add a dashboard item containing user defined HTML",
+    "version":"1.0",
+    "uuid":"aaff161f-871a-435c-866b-c65b4ceca959",
+    "copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
+
+    "dashboard_items": [
+        {
+            "text":"Example Item",
+            "description":"Another Example dashboard item that is going to show some html",
+            "rest_method":"getExampleDashboardItem",
+            "required_capabilities":["ADMIN"]
+        }
+    ],
+
+    "rest_methods": [
+        {
+            "name":"getExampleDashboardItem",
+            "url":"/getExampleDashboardItem",
+            "method":"GET",
+            "argument_names":[],
+            "required_capabilities":["ADMIN"]
+        }
+    ]
+}
