@@ -1,7 +1,7 @@
 {
     "name": "X-Force Offense Source IP Custom Fragment",
     "uuid": "a94e63f3-a5d2-48f2-9131-49f00356b210",
-    "description": "A sample app which displays a custom fragment on offense details showing additional information for the source IP obtained from X-Force",
+    "description": "A sample app which displays a custom fragment on offense details showing additional information for the source IP obtained from X-Force. Requires an X-Force API key.",
     "copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
     "version": "1.0.0",
     "fragments": [
