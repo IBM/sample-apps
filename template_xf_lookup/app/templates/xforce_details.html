@@ -1,0 +1,27 @@
+<!--Licensed Materials - Property of IBM
+5725I71-CC011829
+(C) Copyright IBM Corp. 2017, 2018. All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or
+disclosure restricted by GSA ADP Schedule Contract with IBM Corp.-->
+
+
+
+<html>
+	<body>
+	    <h1>X-Force Exchange Information</h1>
+		<img src="https://www-03.ibm.com/security/ae/en/xforce/img/xforce.png" alt="XForce" style="width:133px;height:168px;" align="left">
+		{% if ip and rep %}
+	    <span>
+	        <p>Risk Score: {{ rep["score"] if rep["score"] else "No Score" }}</p>
+	        <p>Country: {{ rep["geo"]["country"] if rep["geo"] else "No Country" }}</p>
+	        <p>Categories: {{ cats|join(", ") if cats else "No Categories" }}</p>
+	        <a href="https://exchange.xforce.ibmcloud.com/ip/{{ ip }}" target="_blank">View {{ ip }} on X-Force Exchange</a>
+        </span>
+        {% else %}
+        <p>Unable to get additional information for source IP on X-Force exchange</p>
+        {% if error %}
+        <p> {{ error }} </p>
+        {% endif %}
+		{% endif %}
+	</body>
+</html>
