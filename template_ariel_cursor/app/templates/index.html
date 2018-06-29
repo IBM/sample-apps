@@ -1,0 +1,86 @@
+<!--Licensed Materials - Property of IBM
+5725I71-CC011829
+(C) Copyright IBM Corp. 2017, 2018. All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or
+disclosure restricted by GSA ADP Schedule Contract with IBM Corp.-->
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Ariel Cursor App</title>
+    <script src='../static/qjslib/qappfw.js'></script>
+</head>
+
+<body>
+    <script>
+        /**
+         * HTTP GET request to Flask endpoints
+         * @param {string} inputID - input to read for any parameter to attach
+         * @param {string} endpoint - the Flask endpoint to send the request to
+         */
+        function request(inputID, endpoint) {
+            // Parameter is initially set as empty string
+            var param = '';
+            if (inputID) {
+                // If there is an inputID provided
+                // Extract the parameter from the input
+                param = document.getElementById(inputID).value;
+            }
+
+            // HTTP GET to the endpoint provided with any param included
+            var response = QRadar.rest({
+                path: endpoint + param,
+                httpMethod: 'GET',
+                onComplete: function () {
+                    document.getElementById('response').innerText = JSON.stringify(
+                        JSON.parse(this.response),
+                        null,
+                        4
+                    );
+                }
+            });
+
+        }
+    </script>
+    <h2>Ariel Query App</h2>
+    <h3>Start Search</h3>
+    <input id='search_input' type='text' placeholder='Query'>
+    <br>
+    <input type='submit' value='Submit' onclick='request("search_input", "search?query=")'>
+    <h3>Search Info</h3>
+    <input id='info_input' type='text' placeholder='Query'>
+    <br>
+    <input type='submit' value='Submit' onclick='request("info_input", "search_info?cursor_id=")'>
+    <h3>Search Progress</h3>
+    <input id='progress_input' type='text' placeholder='Cursor ID'>
+    <br>
+    <input type='submit' value='Submit' onclick='request("progress_input", "progress?cursor_id=")'>
+    <h3>Search Results</h3>
+    <input id='results_input' type='text' placeholder='Cursor ID'>
+    <br>
+    <input type='submit' value='Submit' onclick='request("results_input", "results?cursor_id=")'>
+    <h3>Delete Search</h3>
+    <input id='delete_input' type='text' placeholder='Cursor ID'>
+    <br>
+    <input type='submit' value='Submit' onclick='request("delete_input", "delete?cursor_id=")'>
+    <h3>Cancel Search</h3>
+    <input id='cancel_input' type='text' placeholder='Cursor ID'>
+    <br>
+    <input type='submit' value='Submit' onclick='request("cancel_input", "cancel?cursor_id=")'>
+    <h3>Poll Search until Result</h3>
+    <input id='poll_input' type='text' name='query' placeholder='Cursor ID'>
+    <br>
+    <input type='submit' value='Submit' onclick='request("poll_input", "poll?cursor_id=")'>
+    <h3>Save Search Results</h3>
+    <input id='save_input' type='text' name='query' placeholder='Cursor ID'>
+    <br>
+    <input type='submit' value='Submit' onclick='request("save_input", "save_results?cursor_id=")'>
+    <h3>List Searches</h3>
+    <input type='submit' value='Submit' onclick='request("", "searches")'>
+    <h3>Response</h3>
+    <div id='response' style='white-space: pre-wrap;'>
+    </div>
+</body>
+
+</html>

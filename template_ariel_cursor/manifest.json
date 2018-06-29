@@ -1,0 +1,17 @@
+{
+    "version": "1.0",
+    "name": "Ariel Cursor Sample",
+    "description": "Application to query the Ariel API and show use of cursors",
+    "uuid": "fb8ebc63-3ef7-409e-9f10-b45af09296e8",
+    "areas": [
+      {
+        "url": "index",
+        "text": "Ariel Cursor Sample",
+        "required_capabilities": [
+          "ADMIN"
+        ],
+        "id": "QArielCursorSample",
+        "description": "Ariel Cursor Sample"
+      }
+    ]
+  }
