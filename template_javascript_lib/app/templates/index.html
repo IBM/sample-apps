@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>
+        JavaScript QRadar API Sample App
+    </title>
+    <script src="./static/qjslib/qappfw.js"></script>
+    <script src="./static/js/sample_api_interaction.js"></script>
+</head>
+
+<body>
+    <h1>JavaScript QRadar API Sample App</h1>
+    <h2>Open AQL Event Search</h2>
+    <input id="aql_event_search_input" type="text" placeholder="AQL query" />
+    <input type="button" value="Open Event Search in Tab" onclick="runAQLEventTab(document.getElementById('aql_event_search_input').value);" />
+    <input type="button" value="Open Event Search in Window" onclick="runAQLEventWindow(document.getElementById('aql_event_search_input').value);" />
+    <h2>Open AQL Flow Search</h2>
+    <input id="aql_flow_search_input" type="text" placeholder="Endpoint name e.g. /api/help/endpoints" />
+    <input type="button" value="Open Flow Search in Tab" onclick="runAQLFlowTab(document.getElementById('aql_flow_search_input').value);" />
+    <input type="button" value="Open Flow Search in Window" onclick="runAQLFlowWindow(document.getElementById('aql_flow_search_input').value);" />
+    <h2>Open Asset by ID</h2>
+    <input id="asset_id_input" type="text" placeholder="Asset ID" />
+    <input type="button" value="Open Asset in Tab" onclick="openAssetTabByID(document.getElementById('asset_id_input').value);" />
+    <input type="button" value="Open Asset in Window" onclick="openAssetWindowByID(document.getElementById('asset_id_input').value);" />
+    <h2>Open Offense Tab By ID</h2>
+    <input id="offense_input" type="text" placeholder="Offense ID" />
+    <input type="button" value="Open Offense Tab" onclick="openOffenseTab(document.getElementById('offense_input').value);"/>
+    <input type="button" value="Open Offense Window" onclick="openOffenseWindow(document.getElementById('offense_input').value);"/>
+    <h2>List Offenses</h2>
+    <input type="button" value="List Offenses" onclick="listOffenses();" />
+    <h2>Get Current User</h2>
+    <input type="button" value="Get Current User" onclick="getCurrentUser();" />
+    <h2>Get Cookie</h2>
+    <input id="get_cookie_input" type="text" placeholder="Cookie Name" />
+    <input type="button" value="Get Cookie" onclick="getCookie(document.getElementById('get_cookie_input').value);" />
+    <h2>Get Offense By ID</h2>
+    <input id="get_offense_input" type="text" placeholder="Offense ID" />
+    <input type="button" value="Get Offense" onclick="getOffense(document.getElementById('get_offense_input').value);" />
+    <h2>Get Full REST Path by Endpoint</h2>
+    <input id="get_rest_endpoint_input" type="text" placeholder="Endpoint name e.g. /api/help/endpoints" />
+    <input type="button" value="Get Path" onclick="getFullRESTPath(document.getElementById('get_rest_endpoint_input').value);" />
+    <h2>List Named Services</h2>
+    <input type="button" value="Get Named Services" onclick="getNamedServices();" />
+    <h2>Output</h2>
+    <div id="output">
+
+    </div>
+</body>
+
+</html>
