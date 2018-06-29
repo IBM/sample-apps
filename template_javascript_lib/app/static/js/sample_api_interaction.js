@@ -91,16 +91,6 @@ function getCookie(name) {
 }
 
 /**
- * Outputs the full path of a REST endpoint provided
- * Builds the full URL based on if '/api/', '/application/' or a full URL is provided
- * Uses QRadar.buildRestUrl(endpoint)
- * @param {*} endpoint the endpoint to build the path from
- */
-function getFullRESTPath(endpoint) {
-    document.getElementById('output').innerHTML = QRadar.buildRestUrl(endpoint);
-}
-
-/**
  * Runs an AQL query within QRadar opening the results within the events tab
  * Uses QRadar.openEventSearch(query, windowOpen)
  * @param {*} query the AQL query to execute
