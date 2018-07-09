@@ -1,0 +1,3 @@
+./src_deps/init/postgres-setup.sh
+./src_deps/init/flyway-setup.sh
+./src_deps/init/flyway-migrate.sh

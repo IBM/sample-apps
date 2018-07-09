@@ -1,0 +1,22 @@
+{
+    "version": "1.0",
+    "name": "Database Migration App",
+    "dev_opts": [
+        {
+            "console_ip": "9.180.225.32"
+        }
+    ],
+    "description": "Application showcase using Flyway to handle database migrations",
+    "uuid": "46c46029-b6ef-4df5-a8f5-9baa2a0db079",
+    "areas": [
+        {
+            "url": "index",
+            "text": "Database Migration",
+            "required_capabilities": [
+                "ADMIN"
+            ],
+            "id": "QDBMigration",
+            "description": "A database migration app"
+        }
+    ]
+}

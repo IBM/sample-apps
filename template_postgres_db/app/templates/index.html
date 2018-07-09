@@ -1,0 +1,65 @@
+<!--Licensed Materials - Property of IBM
+5725I71-CC011829
+(C) Copyright IBM Corp. 2017, 2018. All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or
+disclosure restricted by GSA ADP Schedule Contract with IBM Corp.-->
+
+<html>
+    <head>
+        <title>
+            Postgress DB Sample App
+        </title>
+        <script src='./static/qjslib/qappfw.js'></script>
+        <script>
+            /**
+            * Sends a request to the local Flask /add_fruit endpoint to add a new
+            * fruit to the DB
+            * @param {string} fruit - name of the fruit to add to the DB
+            */
+            function addFruit(fruit)
+            {
+                // Make an HTTP GET request to the add_fruit endpoint
+                // with the fruit name as a query parameter
+                QRadar.rest({
+                    path: "add_fruit?fruit=" + fruit,
+                    httpMethod: 'GET',
+                    onComplete: function()
+                    {
+                        // Once the request is finished reload the page
+                        // getting the latest DB data
+                        location.reload();
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h1>
+            Postgres DB Sample App
+        </h1>
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        Fruit ID
+                    </th>
+                    <th>
+                        Fruit Name
+                    </th>
+                </tr>
+                {% for fruit in fruits %}
+                <tr>
+                    <td>
+                        {{ fruit.id }}
+                    </td>
+                    <td>
+                        {{ fruit.name }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <input id="fruit_input" type="text" placeholder="Fruit">
+        <input type="button" value="Add Fruit" onclick="addFruit(document.getElementById('fruit_input').value)"> 
+    </body>
+</html>
