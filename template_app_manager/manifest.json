@@ -1,0 +1,17 @@
+{
+  "name": "App Manager Sample",
+  "description": "A simple app demonstrating how to interact with the GAF APIs for starting/stopping/deleting QRadar apps",
+  "copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
+  "uuid": "fd4be50b-88db-47a5-9b26-6c7ae403c101",
+  "version": "1.0",
+  "resources": {
+    "memory": 250
+  },
+  "areas": [{
+    "url": "index",
+    "required_capabilities": ["ADMIN"],
+    "text": "App Manager",
+    "description": "QRadar App Manager",
+    "id": "App_Manager_1"
+  }]
+}
