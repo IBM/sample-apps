@@ -1,0 +1,28 @@
+{
+    "environment_variables": [
+        {
+            "name" : "CUSTOM_ENVIRONMENTAL_VARIABLE",
+            "value" : "Environmental variable retrived"
+        }
+    ],
+    "uuid": "6ad1e804-cd95-4c9e-8da2-089f75a6d45c",
+    "dev_opts": [
+        {
+            "console_ip": "9.180.225.32"
+        }
+    ],
+    "description": "Sample app showing how to retrieve environmental variables in an app",
+    "name": "Environmental Variable App",
+    "version": "1.0",
+    "areas": [
+        {
+            "url": "index",
+            "text": "Environmental Variables App",
+            "description": "Sample app showing how to retrieve environmental variables in an app",
+            "id": "QEnvironmentalVariablesApp",
+            "required_capabilities": [
+                "ADMIN"
+            ]
+        }
+    ]
+}
