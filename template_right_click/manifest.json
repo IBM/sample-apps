@@ -1,0 +1,53 @@
+{
+    "name": "Right Click Sample",
+    "gui_actions": [
+        {
+            "description": "Right click on a row, get the IP in the sample app",
+            "text": "Get IP info in sample app",
+            "javascript": "right_click(result)",
+            "id": "rtClickEventIP",
+            "required_capabilities": [
+                "ADMIN"
+            ],
+            "groups": [
+                "ipPopup"
+            ],
+            "rest_method": "rtgetcontext",
+            "icon": null
+        }
+    ],
+    "description": "Sample Application displaying right click functionality",
+    "uuid": "3b6078db-46fa-4337-9f7c-ca72b081fead",
+    "version": "1.0",
+    "page_scripts": [
+        {
+            "page_id": "EventList",
+            "app_name": "EventViewer",
+            "scripts": [
+                "static/right_click.js",
+                "static/qjslib/qappfw.js"
+            ]
+        }
+    ],
+    "rest_methods": [
+        {
+            "url": "/getcontext",
+            "method": "GET",
+            "argument_names": [
+                "context"
+            ],
+            "name": "rtgetcontext"
+        }
+    ],
+    "areas": [
+        {
+            "url": "index",
+            "required_capabilities": [
+                "ADMIN"
+            ],
+            "text": "Right Click Sample",
+            "description": "Sample App displaying right click functionality",
+            "id": "QRightClick"
+        }
+    ]
+}
