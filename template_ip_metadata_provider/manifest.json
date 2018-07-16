@@ -1,6 +1,6 @@
 {
-	"name":"Metadata Provider Example",
-	"description":"Example application showing how to use the metadata provider functionality.",
+	"name":"IP Tooltip Metadata Example",
+	"description":"Example application showing how to add a custom tooltip to appear over IP addresses in QRadar.",
 	"version":"1.0",
 	"uuid":"b5910e87-936e-4a5b-9f47-04f868771e46",
 	"copyright":"Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
