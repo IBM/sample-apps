@@ -9,8 +9,10 @@ from app import app
 from qpylib import qpylib
 import json
 
+
 # Store a reference to this apps UUID so we can filter it out of the app list later
-OWN_UUID = "fd4be50b-88db-47a5-9b26-6c7ae403c101"
+with open('/app/manifest.json', 'r') as manifest:
+    OWN_UUID = json.load(manifest).get('uuid')
 
 
 @app.route('/')
