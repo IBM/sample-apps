@@ -1,4 +1,12 @@
 /**
+ * Licensed Materials - Property of IBM
+ * 5725I71-CC011829
+ * (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved.
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/**
  * Renders the column content, parsed from the JSON data output by the REST call
  * @param {*} jsonTagId The ID of the div that contains the raw JSON output of the REST call
  * @param {*} targetDivTagId The ID of the div to output the custom column content to

@@ -1,8 +1,11 @@
-// Licensed Materials - Property of IBM
-// 5725I71-CC011829
-// (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved.
-// US Government Users Restricted Rights - Use, duplication or
-// disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+/**
+ * Licensed Materials - Property of IBM
+ * 5725I71-CC011829
+ * (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved.
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
 /**
  * Function to be executed on right click of an IP address in the event viewer, 
  * opens the IP address right clicked in the right click sample app
