@@ -1,0 +1,83 @@
+<!--Licensed Materials - Property of IBM
+5725I71-CC011829
+(C) Copyright IBM Corp. 2017, 2018. All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or
+disclosure restricted by GSA ADP Schedule Contract with IBM Corp.-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App Manager</title>
+<link rel="stylesheet" href="static/libs/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/libs/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/css/style.css">
+<script src="static/libs/jquery/jquery-3.1.1.min.js"></script>
+<script src="static/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/js/app_status.js"></script>
+<script src="static/js/app_rest_client.js"></script>
+</head>
+<body>
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-3"><h2>QRadar App Manager</h2></div>
+                <div class="col-sm-2">
+                  <button type="button" class="btn btn-default" id="refreshButton">Refresh Apps</button>
+                </div>
+                <div class="col-sm-3">
+                  <div class="search-box">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                      <input id="search" type="text" class="form-control" placeholder="Search via App Name&hellip;">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active">
+                            <input type="radio" name="status" value="all" checked="checked"> All
+                        </label>
+                        <label class="btn btn-info">
+                            <input type="radio" name="status" value="Creating"> Creating
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="status" value="Upgrading"> Upgrading
+                        </label>
+                        <label class="btn btn-success">
+                            <input type="radio" name="status" value="Running"> Running
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="radio" name="status" value="Stopped"> Stopped
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" name="status" value="Error"> Error
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="appTable" class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>UUID</th>
+                    <th>Version</th>
+                    <th>Status</th>
+                    <th style="text-align:center;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="NoAppsTR">
+                  <th colspan="6" style="text-align: center;">No Apps</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
