@@ -1,11 +1,6 @@
 {
     "version": "1.0",
     "name": "Postgres DB App",
-    "dev_opts": [
-        {
-            "console_ip": "9.180.225.32"
-        }
-    ],
     "description": "Application using a Postgres DB",
     "uuid": "b7091468-7311-4189-9816-53dbde7d1bbf",
     "areas": [

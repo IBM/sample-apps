@@ -7,11 +7,6 @@
 		}
 	],
 	"uuid": "d3f49d50-00aa-4e81-abab-9bfc0c0d3f87",
-	"dev_opts": [
-		{
-			"console_ip": "9.180.225.32"
-		}
-	],
 	"description": "Application showing an example use of a custom column in the offenses tab",
 	"version": "1.0",
 	"page_scripts": [
