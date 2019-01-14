@@ -1,18 +1,18 @@
 {
     "version": "1.0",
-    "name": "Ariel Cursor Sample",
-    "description": "Application to query the Ariel API and show use of cursors",
+    "name": "Ariel Sample",
+    "description": "Application to query the Ariel API",
     "copyright": "Licensed Materials - Property of IBM 5725I71-CC011829 (C) Copyright IBM Corp. 2017, 2018. All Rights Reserved. US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.",
     "uuid": "fb8ebc63-3ef7-409e-9f10-b45af09296e8",
     "areas": [
       {
         "url": "index",
-        "text": "Ariel Cursor Sample",
+        "text": "Ariel Sample",
         "required_capabilities": [
           "ADMIN"
         ],
-        "id": "QArielCursorSample",
-        "description": "Ariel Cursor Sample"
+        "id": "QArielSample",
+        "description": "Ariel Sample"
       }
     ]
   }
