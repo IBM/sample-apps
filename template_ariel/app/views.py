@@ -45,17 +45,17 @@ def index():
 @app.route('/delete')
 def delete():
     """
-    Delete an Ariel cursor, removing it's results
+    Delete an Ariel search, removing it's results
     """
-    # Get the cursor ID from the request to this endpoint
-    # /delete?cursor_id=CURSOR_ID
-    cursor_id = request.args.get('cursor_id')
+    # Get the search ID from the request to this endpoint
+    # /delete?search_id=SEARCH_ID
+    search_id = request.args.get('search_id')
     # Make an HTTP DELETE request to the Ariel searches endpoint specifying
-    # a cursor to delete
-    # /api/ariel/searches/CURSOR_ID
+    # a search to delete
+    # /api/ariel/searches/SEARCH_ID
     response = qpylib.REST(
         'DELETE',
-        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, cursor_id),
+        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, search_id),
         headers=JSON_HEADERS
     )
     if response.ok:
@@ -69,19 +69,19 @@ def delete():
 @app.route('/cancel')
 def cancel():
     """
-    Mark an Ariel cursor as canceled, stopping it from processing further but retaining it's
+    Mark an Ariel search as canceled, stopping it from processing further but retaining it's
     results
     """
-    # Get cursor ID
-    cursor_id = request.args.get('cursor_id')
+    # Get search ID
+    search_id = request.args.get('search_id')
     # Parameter of ?status=CANCELED
     params = {'status': 'CANCELED'}
     # Make an HTTP POST request to the Ariel searches endpoint specifying
-    # a cursor to update the status of to 'CANCELED'
-    # /api/ariel/searches/CURSOR_ID?status=CANCELED
+    # a search to update the status of to 'CANCELED'
+    # /api/ariel/searches/SEARCH_ID?status=CANCELED
     response = qpylib.REST(
         'POST',
-        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, cursor_id),
+        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, search_id),
         headers=JSON_HEADERS,
         params=params
     )
@@ -95,18 +95,18 @@ def cancel():
 @app.route('/save_results')
 def save_results():
     """
-    Update an Ariel cursor to ensure that it's results are saved
+    Update an Ariel search to ensure that it's results are saved
     """
-    # Get cursor ID
-    cursor_id = request.args.get('cursor_id')
+    # Get search ID
+    search_id = request.args.get('search_id')
     # Parameter of ?save_results=true
     params = {'save_results': 'true'}
     # Make an HTTP POST request to the Ariel searches endpoint specifying
-    # a cursor to update to have the results of of it's search saved
-    # /api/ariel/searches/CURSOR_ID?save_results=true
+    # a search to update to have the results of of it's search saved
+    # /api/ariel/searches/SEARCH_ID?save_results=true
     response = qpylib.REST(
         'POST',
-        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, cursor_id),
+        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, search_id),
         headers=JSON_HEADERS,
         params=params
     )
@@ -120,22 +120,22 @@ def save_results():
 @app.route('/poll')
 def poll():
     """
-    Repeatedly call the Ariel API to check if a cursor has finished processing
+    Repeatedly call the Ariel API to check if a search has finished processing
     if it has, retrieve and return the results
     Poll only as long as the timeout defined
     """
-    # Get cursor ID
-    cursor_id = request.args.get('cursor_id')
+    # Get search ID
+    search_id = request.args.get('search_id')
     # Start time that the polling began at
     init_time = time.time()
     while init_time + TIMEOUT_MILLISECONDS > time.time():
         # While within the timeout
         # Poll with an HTTP GET request to the Ariel searches endpoint specifying
-        # a cursor to retrieve the information of
-        # /api/ariel/searches/CURSOR_ID
+        # a search to retrieve the information of
+        # /api/ariel/searches/SEARCH_ID
         response = qpylib.REST(
             'GET',
-            '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, cursor_id),
+            '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, search_id),
             headers=JSON_HEADERS
         ).json()
         if 'http_response' in response:
@@ -145,11 +145,11 @@ def poll():
         if response['status'] == 'COMPLETED':
             # If the status of the query is COMPLETED, the results can now be retrieved
             # Make an HTTP GET request to the Ariel searches endpoint specifying
-            # a cursor to retrieve the results of
-            # /api/ariel/searches/CURSOR_ID/results
+            # a search to retrieve the results of
+            # /api/ariel/searches/SEARCH_ID/results
             response = qpylib.REST(
                 'GET',
-                '{0}/{1}/results'.format(ARIEL_SEARCHES_ENDPOINT, cursor_id),
+                '{0}/{1}/results'.format(ARIEL_SEARCHES_ENDPOINT, search_id),
                 headers=JSON_HEADERS
             ).json()
             # Return the results
@@ -163,15 +163,15 @@ def poll():
 @app.route('/progress')
 def progress():
     """
-    Gets information about a cursor and returns details on the cursor status and progress
+    Gets information about a search and returns details on the search status and progress
     of execution
     """
-    # Get cursor ID
-    cursor_id = request.args.get('cursor_id')
-    # HTTP GET to /api/ariel/searches/CURSOR_ID
+    # Get search ID
+    search_id = request.args.get('search_id')
+    # HTTP GET to /api/ariel/searches/SEARCH_ID
     response = qpylib.REST(
         'GET',
-        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, cursor_id),
+        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, search_id),
         headers=JSON_HEADERS
     ).json()
     if 'http_response' in response:
@@ -191,14 +191,14 @@ def progress():
 @app.route('/results')
 def results():
     """
-    Retrieves the results of a cursor
+    Retrieves the results of a search
     """
-    # Get cursor ID
-    cursor_id = request.args.get('cursor_id')
-    # HTTP GET to /api/ariel/searches/CURSOR_ID/results
+    # Get search ID
+    search_id = request.args.get('search_id')
+    # HTTP GET to /api/ariel/searches/SEARCH_ID/results
     response = qpylib.REST(
         'GET',
-        '{0}/{1}/results'.format(ARIEL_SEARCHES_ENDPOINT, cursor_id),
+        '{0}/{1}/results'.format(ARIEL_SEARCHES_ENDPOINT, search_id),
         headers=JSON_HEADERS
     ).json()
     # Return the response
@@ -208,10 +208,10 @@ def results():
 @app.route('/search')
 def search():
     """
-    Creates a new cursor with the query provided, returns a cursor ID to allow further
-    cursor interaction, such as retrieving results
+    Creates a new search with the query provided, returns a search ID to allow further
+    search interaction, such as retrieving results
     """
-    # Get cursor ID
+    # Get search ID
     query = request.args.get('query')
     # Parameter of ?query_expression=QUERY
     params = {'query_expression': query}
@@ -229,7 +229,7 @@ def search():
 @app.route('/searches')
 def searches():
     """
-    Lists existing cursors on the Ariel DB, including ones that have completed execution
+    Lists existing searchs on the Ariel DB, including ones that have completed execution
     """
     # HTTP GET to /api/ariel/searches
     response = qpylib.REST(
@@ -244,14 +244,14 @@ def searches():
 @app.route('/search_info')
 def search_info():
     """
-    Gets information about a cursor, such as status, progress and other meta data
+    Gets information about a search, such as status, progress and other meta data
     """
-    # Get cursor ID
-    cursor_id = request.args.get('cursor_id')
-    # HTTP GET to /api/ariel/searches/CURSOR_ID
+    # Get search ID
+    search_id = request.args.get('search_id')
+    # HTTP GET to /api/ariel/searches/SEARCH_ID
     response = qpylib.REST(
         'GET',
-        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, cursor_id),
+        '{0}/{1}'.format(ARIEL_SEARCHES_ENDPOINT, search_id),
         headers=JSON_HEADERS
     ).json()
     # Return the response

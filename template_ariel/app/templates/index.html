@@ -8,7 +8,7 @@ disclosure restricted by GSA ADP Schedule Contract with IBM Corp.-->
 <html>
 
 <head>
-    <title>Ariel Cursor App</title>
+    <title>Ariel App</title>
     <script src='./static/qjslib/qappfw.js'></script>
 </head>
 
@@ -51,31 +51,31 @@ disclosure restricted by GSA ADP Schedule Contract with IBM Corp.-->
     <h3>Search Info</h3>
     <input id='info_input' type='text' placeholder='Query'>
     <br>
-    <input type='submit' value='Submit' onclick='request("info_input", "search_info?cursor_id=")'>
+    <input type='submit' value='Submit' onclick='request("info_input", "search_info?search_id=")'>
     <h3>Search Progress</h3>
-    <input id='progress_input' type='text' placeholder='Cursor ID'>
+    <input id='progress_input' type='text' placeholder='Search ID'>
     <br>
-    <input type='submit' value='Submit' onclick='request("progress_input", "progress?cursor_id=")'>
+    <input type='submit' value='Submit' onclick='request("progress_input", "progress?search_id=")'>
     <h3>Search Results</h3>
-    <input id='results_input' type='text' placeholder='Cursor ID'>
+    <input id='results_input' type='text' placeholder='Search ID'>
     <br>
-    <input type='submit' value='Submit' onclick='request("results_input", "results?cursor_id=")'>
+    <input type='submit' value='Submit' onclick='request("results_input", "results?search_id=")'>
     <h3>Delete Search</h3>
-    <input id='delete_input' type='text' placeholder='Cursor ID'>
+    <input id='delete_input' type='text' placeholder='Search ID'>
     <br>
-    <input type='submit' value='Submit' onclick='request("delete_input", "delete?cursor_id=")'>
+    <input type='submit' value='Submit' onclick='request("delete_input", "delete?search_id=")'>
     <h3>Cancel Search</h3>
-    <input id='cancel_input' type='text' placeholder='Cursor ID'>
+    <input id='cancel_input' type='text' placeholder='Search ID'>
     <br>
-    <input type='submit' value='Submit' onclick='request("cancel_input", "cancel?cursor_id=")'>
+    <input type='submit' value='Submit' onclick='request("cancel_input", "cancel?search_id=")'>
     <h3>Poll Search until Result</h3>
-    <input id='poll_input' type='text' name='query' placeholder='Cursor ID'>
+    <input id='poll_input' type='text' name='query' placeholder='Search ID'>
     <br>
-    <input type='submit' value='Submit' onclick='request("poll_input", "poll?cursor_id=")'>
+    <input type='submit' value='Submit' onclick='request("poll_input", "poll?search_id=")'>
     <h3>Save Search Results</h3>
-    <input id='save_input' type='text' name='query' placeholder='Cursor ID'>
+    <input id='save_input' type='text' name='query' placeholder='Search ID'>
     <br>
-    <input type='submit' value='Submit' onclick='request("save_input", "save_results?cursor_id=")'>
+    <input type='submit' value='Submit' onclick='request("save_input", "save_results?search_id=")'>
     <h3>List Searches</h3>
     <input type='submit' value='Submit' onclick='request("", "searches")'>
     <h3>Response</h3>
