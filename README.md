@@ -1,3 +1,16 @@
+> ⚠️ THIS REPOSITORY IS DEPRECATED ⚠️
+>
+> Go to <https://github.com/IBM/qradar-sample-apps> to see the new QRadar sample apps.
+>
+> Due to the new App Framework v2 which uses the Red Hat Universal Base Image and Python 3 these apps are now
+> deprecated.
+>
+> These samples are kept here to support old versions of the QRadar App Editor and anyone maintaining a CentOS 6 and
+> Python 2 based QRadar app.
+>
+> If developing a new QRadar app, please use the new App Framework v2 using the Red Hat Universal Base Image and
+> Python 3.
+
 # QRadar Sample Apps
 
 This project houses various sample apps designed to help you get up and running with the QRadar application framework. They have been developed with:
